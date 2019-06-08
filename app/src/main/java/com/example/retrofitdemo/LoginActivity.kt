@@ -6,15 +6,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import api.domain.doLogin
-import api.requestmodels.LoginRequest
-import api.responsemodels.User
+import com.example.retrofitdemo.api.domain.doLogin
+import com.example.retrofitdemo.api.requestmodels.LoginRequest
+import com.example.retrofitdemo.api.responsemodels.User
 import com.google.gson.Gson
-import utils.AndroidUtility
+import com.example.retrofitdemo.utils.AndroidUtility
+import com.example.retrofitdemo.utils.CustomLoaderDialog
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
-    //private lateinit var mCustomLoaderDialog: CustomLoaderDialog
+    private lateinit var mCustomLoaderDialog: CustomLoaderDialog
     private val tvLogin by lazy { findViewById<TextView>(R.id.tv_login) }
     private val tvForgotPassword by lazy { findViewById<TextView>(R.id.tv_forget_pass) }
     private val tvSignUpNow by lazy { findViewById<TextView>(R.id.tv_sign_up_now) }
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initView() {
-        //mCustomLoaderDialog = CustomLoaderDialog(this@LoginActivity)
+        mCustomLoaderDialog = CustomLoaderDialog(this@LoginActivity)
         tvLogin.setOnClickListener(this)
         tvForgotPassword.setOnClickListener(this)
         tvSignUpNow.setOnClickListener(this)
@@ -63,14 +64,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mForgotPasswordDialog.show()
     }*/
 
-   /* fun showLoader() {
+    fun showLoader() {
         mCustomLoaderDialog.show()
-    }*/
+    }
 
-   /* fun hideLoader() {
+    fun hideLoader() {
         if (mCustomLoaderDialog.isShowing)
             mCustomLoaderDialog.cancel()
-    }*/
+    }
 
     private fun setLogin() {
         val userName = et_email.text.toString().trim()
@@ -104,6 +105,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             var gson = Gson()
             val userDetails = it.getAsJsonObject("userdetails")
             val user = gson.fromJson(userDetails, User::class.java)
+            AndroidUtility.showSnackBar(this,"Login Successfully.....")
            // saveUser(user)
            // Stash.put(USER_DETAILS, user)
            // moveToDashboard(user)

@@ -1,4 +1,4 @@
-package widgets;
+package com.example.retrofitdemo.widgets;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -15,8 +15,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import com.example.retrofitdemo.R;
-import com.wang.avi.Indicator;
-import com.wang.avi.indicators.BallClipRotatePulseIndicator;
+import com.example.retrofitdemo.widgets.loader.BallClipRotatePulseIndicator;
+
 
 public class AVLoadingIndicatorView extends View {
 

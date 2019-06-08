@@ -1,4 +1,4 @@
-package api.requestmodels
+package com.example.retrofitdemo.api.requestmodels
 
 
     class LoginRequest {

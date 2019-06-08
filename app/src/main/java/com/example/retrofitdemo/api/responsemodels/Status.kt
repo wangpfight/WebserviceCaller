@@ -1,4 +1,4 @@
-package api.responsemodels
+package com.example.retrofitdemo.api.responsemodels
 
 class Status {
     var error_code: Int = 1

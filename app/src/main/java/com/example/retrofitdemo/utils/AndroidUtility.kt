@@ -1,8 +1,7 @@
-package utils
+package com.example.retrofitdemo.utils
 
 import android.app.Activity
 import android.support.design.widget.Snackbar
-import com.example.retrofitdemo.R
 
 
 class AndroidUtility {

@@ -1,9 +1,9 @@
-package api
+package com.example.retrofitdemo.api
 
 import com.example.webservicecaller.getRetroAdapter
 import com.example.webservicecaller.getServiceCaller
 import okhttp3.ResponseBody
-import api.requestmodels.LoginRequest
+import com.example.retrofitdemo.api.requestmodels.LoginRequest
 import retrofit2.http.Body
 import retrofit2.http.POST
 import rx.Observable
@@ -24,109 +24,109 @@ fun getRestCaller(connectionTime: Long = DEFAULT_TIME_OUT): API {
 
 /*object EquineApi {
     val horseList: String = "apieq/horselist"
-    val horseBreed: String = "api/horsebreed"
-    val horseHeightHH: String = "api/horsehh"
-    val horseColor: String = "api/horsecolor"
-    val horseSex: String = "api/horsesex"
+    val horseBreed: String = "com.example.retrofitdemo.api/horsebreed"
+    val horseHeightHH: String = "com.example.retrofitdemo.api/horsehh"
+    val horseColor: String = "com.example.retrofitdemo.api/horsecolor"
+    val horseSex: String = "com.example.retrofitdemo.api/horsesex"
 
 
-    val providerType : String = "api/providertypelist"
-    val userAssistantList:String ="api/assistance_list"
-    val providerTypeList:String ="api/providerjobptype"
-    val providerList:String="api/providernameget"
+    val providerType : String = "com.example.retrofitdemo.api/providertypelist"
+    val userAssistantList:String ="com.example.retrofitdemo.api/assistance_list"
+    val providerTypeList:String ="com.example.retrofitdemo.api/providerjobptype"
+    val providerList:String="com.example.retrofitdemo.api/providernameget"
 
     val horseDetails = "apieq/horsedetails "
-    val horseHeightCM = "api/horsecm"
-    val deleteHorse = "api/horsedelete"
-    val contract_list_owner = "api/contract_list_owner"
+    val horseHeightCM = "com.example.retrofitdemo.api/horsecm"
+    val deleteHorse = "com.example.retrofitdemo.api/horsedelete"
+    val contract_list_owner = "com.example.retrofitdemo.api/contract_list_owner"
 
-    val trainerList = "api/trainernameget"
-    val serviceTypeList: String = "api/getservicetype"
+    val trainerList = "com.example.retrofitdemo.api/trainernameget"
+    val serviceTypeList: String = "com.example.retrofitdemo.api/getservicetype"
 
-    val acceptContract: String = "api/trainercontractaccept"
-    val rejectContract: String = "api/trainercontractreject"
-    val trainerContractNegotiate = "api/trainercontractnegotiateupdate"
+    val acceptContract: String = "com.example.retrofitdemo.api/trainercontractaccept"
+    val rejectContract: String = "com.example.retrofitdemo.api/trainercontractreject"
+    val trainerContractNegotiate = "com.example.retrofitdemo.api/trainercontractnegotiateupdate"
 
-    val providerJobrequest = "api/provider_jobrequest"
-    val acceptJobrequest = "api/requestedjob_accept"
-    val rejectJobrequest = "api/requestedjob_reject"
-    val negotiateJob = "api/updatetask_negotiation"
+    val providerJobrequest = "com.example.retrofitdemo.api/provider_jobrequest"
+    val acceptJobrequest = "com.example.retrofitdemo.api/requestedjob_accept"
+    val rejectJobrequest = "com.example.retrofitdemo.api/requestedjob_reject"
+    val negotiateJob = "com.example.retrofitdemo.api/updatetask_negotiation"
 }*/
 
 
 interface API {
-    @POST("api/login")
+    @POST("com/example/retrofitdemo/api/login")
     fun doLogin(@Body loginRequest: LoginRequest): Observable<ResponseBody>
 
-  /*  @POST("api/register")
+  /*  @POST("com.example.retrofitdemo.api/register")
     fun doOwnerRegistration(@Body registrationRequest: OwnerRegistrationRequest): Observable<ResponseBody>
 
 
-    @POST("api/registerpro")
+    @POST("com.example.retrofitdemo.api/registerpro")
     fun doProviderRegistration(@Body registrationRequest: ProviderRegistrationRequest): Observable<ResponseBody>
 
-    @POST("api/forget_pass")
+    @POST("com.example.retrofitdemo.api/forget_pass")
     fun doForgotPassword(@Body forgotPasswordRequest: ForgotPasswordRequest): Observable<ResponseBody>
 
-    @POST("api/userdetails")
+    @POST("com.example.retrofitdemo.api/userdetails")
     fun getUserDetails(@Body userIdRequest: UserIdRequest): Observable<ResponseBody>
 
-    @POST("api/provider_list")
+    @POST("com.example.retrofitdemo.api/provider_list")
     fun getProviderList(@Body userIdRequest: UserIdRequest): Observable<ResponseBody>
 
-    @POST("api/invitelist")
+    @POST("com.example.retrofitdemo.api/invitelist")
     fun getInvitesList(@Body userIdRequest: UserIdRequest): Observable<ResponseBody>
 
-    @POST("api/my_provider_list")
+    @POST("com.example.retrofitdemo.api/my_provider_list")
     fun getMyProviderList(@Body userIdRequest: UserIdRequest): Observable<ResponseBody>
 
-    @POST("api/add_provider")
+    @POST("com.example.retrofitdemo.api/add_provider")
     fun addProvider(@Body addProviderRequest: AddProviderRequest): Observable<ResponseBody>
 
-    @POST("api/delete_provider")
+    @POST("com.example.retrofitdemo.api/delete_provider")
     fun deleteProvider(@Body providerIdRequest: ProviderIdRequest): Observable<ResponseBody>
 
-    @POST("api/assistance_list")
+    @POST("com.example.retrofitdemo.api/assistance_list")
     fun assistantList(@Body userIdRequest: UserIdRequest): Observable<ResponseBody>
 
-    @POST("api/assistance_update")
+    @POST("com.example.retrofitdemo.api/assistance_update")
     fun assistantUpdate(@Body addAssistantRequest: AddAssistantRequest): Observable<ResponseBody>
 
-    @POST("api/search_provider")
+    @POST("com.example.retrofitdemo.api/search_provider")
     fun searchProviderLocation(@Body searchProviderLocationRequest: SearchProviderLocationRequest): Observable<ResponseBody>
 
-    @POST("api/search_provider_sr_location")
+    @POST("com.example.retrofitdemo.api/search_provider_sr_location")
     fun searchProviderServiceLocation(@Body searchProviderLocationRequest: SearchProviderLocationRequest): Observable<ResponseBody>
 
-    @POST("api/add_provider")
+    @POST("com.example.retrofitdemo.api/add_provider")
     fun addProvider(@Body searchProviderLocationRequest: SearchProviderLocationRequest): Observable<ResponseBody>
 
 
-    @POST("api/add_invite_email")
+    @POST("com.example.retrofitdemo.api/add_invite_email")
     fun addProviderInviteMail(@Body addInviteProviderMailRequest: AddInviteProviderMailRequest): Observable<ResponseBody>
 
-    @POST("api/add_invite_phone")
+    @POST("com.example.retrofitdemo.api/add_invite_phone")
     fun addProviderInvitePhone(@Body addInviteProviderPhoneRequest: AddInviteProviderPhoneRequest): Observable<ResponseBody>
 
-    @POST("api/ow_sow_joblist")
+    @POST("com.example.retrofitdemo.api/ow_sow_joblist")
     fun getProviderJobList(@Body getProviderJobListRequest: GetProviderJobListRequest): Observable<ResponseBody>
 
-    @POST("api/ow_sow_assis_joblist")
+    @POST("com.example.retrofitdemo.api/ow_sow_assis_joblist")
     fun getAssistantJobList(@Body getAssistantJobListRequest: GetAssistantJobListRequest): Observable<ResponseBody>
 
-    @POST("api/taskslistbyjob")
+    @POST("com.example.retrofitdemo.api/taskslistbyjob")
     fun getJobtaskList(@Body jobIdRequest: JobIdRequest): Observable<ResponseBody>
 
-    @POST("api/taskdel")
+    @POST("com.example.retrofitdemo.api/taskdel")
     fun deletetask(@Body deleteTaskIdRequest: DeleteTaskIdRequest): Observable<ResponseBody>
 
-    @POST("api/jobdetailsfull")
+    @POST("com.example.retrofitdemo.api/jobdetailsfull")
     fun jobDetails(@Body jobDetailsRequest: JobDetailsRequest): Observable<ResponseBody>
 
 
 
     @Multipart
-    @POST("api/addsingltsk")
+    @POST("com.example.retrofitdemo.api/addsingltsk")
     fun addjobTask(@Part("job_id") job_id: RequestBody,
                    @Part("sl_horse") sl_horse: RequestBody,
                    @Part("srv_type") srv_type: RequestBody,
@@ -142,7 +142,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/update_owner_pdetails")
+    @POST("com.example.retrofitdemo.api/update_owner_pdetails")
     fun updateOwnerProfileStepOne(@Part("user_id") user_id: RequestBody,
                                   @Part("cgname") cgname: RequestBody,
                                   @Part("fname") fname: RequestBody,
@@ -156,7 +156,7 @@ interface API {
                                   @Part image: MultipartBody.Part): Observable<ResponseBody>
 
     @Multipart
-    @POST("api/update_user")
+    @POST("com.example.retrofitdemo.api/update_user")
     fun updateOwnerProfileStepTwo(@Part("user_id") user_id: RequestBody,
                                   @Part("address") address: RequestBody,
                                   @Part("town") town: RequestBody,
@@ -168,7 +168,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/initializetrainerprovidjob")
+    @POST("com.example.retrofitdemo.api/initializetrainerprovidjob")
     fun addNewJob(@Part("user_id") user_id: RequestBody,
                   @Part("mapLat") mapLat: RequestBody,
                   @Part("mapLng") mapLng: RequestBody,
@@ -183,7 +183,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/update_user")
+    @POST("com.example.retrofitdemo.api/update_user")
     fun updateUser(@Part("user_id") user_id: RequestBody,
                    @Part("first_name") first_name: RequestBody,
                    @Part("middle_name") middle_name: RequestBody,
@@ -200,7 +200,7 @@ interface API {
                    @Part image: MultipartBody.Part): Observable<ResponseBody>
 
     @Multipart
-    @POST("api/assistance_insert")
+    @POST("com.example.retrofitdemo.api/assistance_insert")
     fun addAssistant(@Part("user_id") user_id: RequestBody,
                      @Part("user_role_name") user_role_name: RequestBody,
                      @Part("first_name") first_name: RequestBody,
@@ -212,7 +212,7 @@ interface API {
                      @Part image: MultipartBody.Part): Observable<ResponseBody>
 
     @Multipart
-    @POST("api/assistance_update")
+    @POST("com.example.retrofitdemo.api/assistance_update")
     fun updateAssistant(@Part("user_id") user_id: RequestBody,
                         @Part("first_name") first_name: RequestBody,
                         @Part("family_name") family_name: RequestBody,
@@ -223,7 +223,7 @@ interface API {
                         @Part image: MultipartBody.Part?): Observable<ResponseBody>
 
     @Multipart
-    @POST("api/update_user")
+    @POST("com.example.retrofitdemo.api/update_user")
     fun updateUserWithoutImage(@Part("user_id") user_id: RequestBody,
                                @Part("first_name") first_name: RequestBody,
                                @Part("middle_name") middle_name: RequestBody,
@@ -243,7 +243,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/addhorseprofile")
+    @POST("com.example.retrofitdemo.api/addhorseprofile")
     fun addHorseProfile(@Part("user_id") user_id: RequestBody,
                         @Part("mapLat") mapLat: RequestBody,
                         @Part("mapLng") mapLng: RequestBody,
@@ -286,7 +286,7 @@ interface API {
                         @Part uservfile: List<MultipartBody.Part>?): Observable<ResponseBody>
 
     @Multipart
-    @POST("api/addhorseprofile")
+    @POST("com.example.retrofitdemo.api/addhorseprofile")
     fun createHorseStepOne(
         @Part("user_id") user_id: RequestBody,
         @Part("horse_name") horse_name: RequestBody,
@@ -295,7 +295,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/updatehorseprofile")
+    @POST("com.example.retrofitdemo.api/updatehorseprofile")
     fun updateHorseMedia(
         @Part("user_id") user_id: RequestBody,
         @Part("horse_id") horse_id: RequestBody,
@@ -305,7 +305,7 @@ interface API {
 
 
     @Multipart
-    @POST("api/addcontractsubmit")
+    @POST("com.example.retrofitdemo.api/addcontractsubmit")
     fun addContractSubmit(
         @Part("user_id") user_id: RequestBody,
         @Part("contract_horse") contract_horse: RequestBody,

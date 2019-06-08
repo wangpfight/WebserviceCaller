@@ -1,10 +1,10 @@
-package api.domain
+package com.example.retrofitdemo.api.domain
 
-import android.app.Activity
+
 import android.content.Context
-import api.getRestCaller
-import api.requestmodels.LoginRequest
-import api.responsemodels.BaseResWrapper
+import com.example.retrofitdemo.api.getRestCaller
+import com.example.retrofitdemo.api.requestmodels.LoginRequest
+import com.example.retrofitdemo.api.responsemodels.BaseResWrapper
 import com.example.retrofitdemo.LoginActivity
 import com.example.webservicecaller.applySchedulers
 import com.google.gson.Gson
@@ -18,7 +18,7 @@ fun Context.doLogin(loginRequest: LoginRequest, onGetLoginSucess: (result: JsonO
         AndroidUtility.showSnackBar(this as Activity, getString(R.string.pls_check_internet_con))
         return
     }*/
-    //(this as LoginActivity).showLoader()
+    (this as LoginActivity).showLoader()
     getRestCaller().doLogin(loginRequest).compose<ResponseBody>(applySchedulers<ResponseBody>()).subscribe({ response ->
         val string_response = response?.string() ?: "{}"
         val gson = Gson()
@@ -33,9 +33,9 @@ fun Context.doLogin(loginRequest: LoginRequest, onGetLoginSucess: (result: JsonO
             e.printStackTrace()
             onError("Error Connecting...Please try again!")
         }
-       // this.hideLoader()
+        this.hideLoader()
     }, { error ->
-       // this.hideLoader()
+        this.hideLoader()
         onError("Error Connecting...Please try again!")
     })
 }

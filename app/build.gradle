@@ -25,7 +25,10 @@ android {
         main {
             java.srcDirs = ['src/main/java', 'src/main/kotlin']
             res.srcDirs = [
-                           'src/main/resource/login'
+                           'src/main/resource/login',
+                           'src/main/resource/res',
+                           'src/main/resource/dialog'
+
                           ]
         }
         main.java.srcDirs += 'src/main/kotlin'

@@ -1,4 +1,4 @@
-package api.responsemodels
+package com.example.retrofitdemo.api.responsemodels
 
 import com.google.gson.JsonObject
 
