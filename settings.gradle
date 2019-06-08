@@ -1,0 +1,2 @@
+include ':app', ':WebserviceCaller'
+project(':WebserviceCaller').projectDir = new File('library_module/WebserviceCaller')
